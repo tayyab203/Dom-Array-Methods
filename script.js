@@ -26,3 +26,27 @@ async function getRandomUser() {
   addData(newUser);
 }
 
+
+// Double eveyones money
+function doubleMoney() {
+    data = data.map(user => {
+      return { ...user, money: user.money * 2 };
+    });
+  
+    updateDOM();
+  }
+  
+  // Sort users by richest
+  function sortByRichest() {
+    console.log(123);
+    data.sort((a, b) => b.money - a.money);
+  
+    updateDOM();
+  }
+  
+  // Filter only millionaires
+  function showMillionaires() {
+    data = data.filter(user => user.money > 1000000);
+  
+    updateDOM();
+  }
